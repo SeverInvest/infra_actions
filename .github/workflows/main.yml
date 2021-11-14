@@ -11,7 +11,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.9
 
     - name: Install dependencies
       run: |
@@ -27,3 +27,7 @@ jobs:
       run: |
         # запуск проверки проекта по flake8
         python -m flake8
+        # перейти в папку, содержащую manage.py - <корневая_папка>/<папка_проекта>/manage.py
+        cd infra_project/
+        # запустить написанные разработчиком тесты
+        python manage.py test
